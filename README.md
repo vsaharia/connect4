@@ -1,5 +1,5 @@
 # Connect 4
-## This is a Python implementation of the board game Connect Four using the Pygame module and NumPy. 
+## This is a Python implementation of the 2-player board game Connect Four using the Pygame module and NumPy. 
 ### To run the project:
   * Download the project folder.
   * Open Command Prompt if you're on Windows or Terminal for Mac.
