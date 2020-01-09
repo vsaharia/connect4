@@ -3,7 +3,7 @@
 ### To run the project:
   * Download the project folder.
   * Open Command Prompt if you're on Windows or Terminal for Mac.
-  * Make sure your numpy and pygame libraries are installed and properly updated
+  * Make sure your python libraries, particularly numpy and pygame, are installed and up to date
       - For installing use `pip install _____` and for upgrading `pip upgrade _____`
   * Change the current working directory to the directory of the project folder.
   * Run the game using `python connectfour.py`
