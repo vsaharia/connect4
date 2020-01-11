@@ -23,7 +23,6 @@ draw_text = font2.render("IT'S A DRAW!", True, WHITE)
 p1_win = font2.render("P1 WINS!", True, RED)
 p2_win = font2.render("P2 WINS!", True, YELLOW)
 
-
 turn = 0
 game_over = False
 
@@ -126,7 +125,7 @@ def check_win(player):
 					
 def drop_piece(turn, xpos):
 
-	piece_xpos = int(math.floor(xpos/68))
+	piece_xpos = int(math.floor(xpos/X_DIFF))
 	if piece_xpos == 7:
 		piece_xpos = 6
 	b = check_open_row(piece_xpos)
@@ -160,7 +159,7 @@ def game_setup():
 	
 	for x in range(0, 7):
 		for y in range(0, 6):
-			pygame.draw.circle(BACKGROUND, WHITE, (50+x*68, 290+y*64), RADIUS)
+			pygame.draw.circle(BACKGROUND, WHITE, (50+x*X_DIFF, 290+y*Y_DIFF), RADIUS)
 
 	BACKGROUND.blit(player1_text, (20,10))
 	BACKGROUND.blit(player2_text, (255, 10))
@@ -180,17 +179,16 @@ while not game_over:
 			pygame.draw.rect(BACKGROUND, BLACK, (0, 170, 500, 60))
 			x_pos = event.pos[0]
 			if turn == 0:
-				pygame.draw.circle(BACKGROUND, RED, (x_pos, 200), 29)
+				pygame.draw.circle(BACKGROUND, RED, (x_pos, 200), RADIUS)
 			else:
-				pygame.draw.circle(BACKGROUND, YELLOW, (x_pos, 200), 29)
+				pygame.draw.circle(BACKGROUND, YELLOW, (x_pos, 200), RADIUS)
 
 		pygame.display.update()	
 		if event.type == pygame.MOUSEBUTTONDOWN:
 			mouse_xpos = event.pos[0]
-			col = int(math.floor(mouse_xpos/68))
+			col = int(math.floor(mouse_xpos/X_DIFF))
 			if col == 7:
 				col = 6
-				print(col)
 			if can_be_placed(col):
 				pygame.mixer.music.load('connect4_trimmed.mp3')
 				pygame.mixer.music.play()
